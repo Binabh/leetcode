@@ -1,0 +1,19 @@
+use std::collections::HashMap;
+
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    let mut hash: HashMap<i32, usize> = HashMap::new();
+
+    for (i, num) in nums.iter().enumerate() {
+        if let Some(&complement_index) = hash.get(num) {
+            return vec![complement_index as i32, i as i32];
+        }
+        hash.insert((target - num) as i32, i);
+    }
+    vec![]
+}
+
+pub fn test() {
+    assert_eq!(two_sum(vec![1, 2, 3], 5), vec![1, 2])
+}
+
+pub const NAME: &str = "two_sum";
