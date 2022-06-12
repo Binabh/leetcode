@@ -1,3 +1,5 @@
+mod calculate_tax;
+mod divide;
 mod find_median_sorted_arrays;
 mod is_palindrome;
 mod is_valid;
@@ -21,6 +23,8 @@ fn main() {
         roman_to_int::NAME => roman_to_int::test(),
         longest_common_prefix::NAME => longest_common_prefix::test(),
         find_median_sorted_arrays::NAME => find_median_sorted_arrays::test(),
+        divide::NAME => divide::test(),
+        calculate_tax::NAME => calculate_tax::test(),
         _ => print!("{}", query),
     }
 }
