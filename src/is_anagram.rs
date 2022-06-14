@@ -1,26 +1,20 @@
-use std::collections::HashMap;
-
 pub fn is_anagram(s: String, t: String) -> bool {
     if s.len() != t.len() {
         return false;
     }
-    let mut map: HashMap<char, usize> = HashMap::new();
+    let mut s_vec: [usize; 27] = [0; 27];
     for ch in s.chars() {
-        match map.get(&ch) {
-            Some(_) => {
-                continue;
-            }
-            None => {
-                let scount = s.matches(ch).count();
-                let tcount = t.matches(ch).count();
-                if scount != tcount {
-                    return false;
-                }
-                map.insert(ch, scount);
-            }
-        };
+        let index = ch as u32 - 'a' as u32;
+        let uindex = index as usize;
+        s_vec[uindex] = s_vec[uindex] + 1;
     }
-    true
+    let mut t_vec: [usize; 27] = [0; 27];
+    for ch in t.chars() {
+        let index = ch as u32 - 'a' as u32;
+        let uindex = index as usize;
+        t_vec[uindex] = t_vec[uindex] + 1;
+    }
+    t_vec == s_vec
 }
 pub fn test() {
     assert_eq!(
