@@ -1,6 +1,8 @@
 mod calculate_tax;
 mod divide;
 mod find_median_sorted_arrays;
+mod group_anagrams;
+mod is_anagram;
 mod is_palindrome;
 mod is_valid;
 mod longest_common_prefix;
@@ -25,6 +27,8 @@ fn main() {
         find_median_sorted_arrays::NAME => find_median_sorted_arrays::test(),
         divide::NAME => divide::test(),
         calculate_tax::NAME => calculate_tax::test(),
+        is_anagram::NAME => is_anagram::test(),
+        group_anagrams::NAME => group_anagrams::test(),
         _ => print!("{}", query),
     }
 }
