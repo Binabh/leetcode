@@ -2,12 +2,14 @@ mod calculate_tax;
 mod divide;
 mod find_median_sorted_arrays;
 mod group_anagrams;
+mod int_to_roman;
 mod is_anagram;
 mod is_palindrome;
 mod is_valid;
 mod longest_common_prefix;
 mod my_pow;
 mod my_sqrt;
+mod number_to_words;
 mod reverse;
 mod roman_to_int;
 mod two_sum;
@@ -29,6 +31,8 @@ fn main() {
         calculate_tax::NAME => calculate_tax::test(),
         is_anagram::NAME => is_anagram::test(),
         group_anagrams::NAME => group_anagrams::test(),
+        int_to_roman::NAME => int_to_roman::test(),
+        number_to_words::NAME => number_to_words::test(),
         _ => print!("{}", query),
     }
 }
