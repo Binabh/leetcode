@@ -1,4 +1,5 @@
 mod calculate_tax;
+mod convert_to_base7;
 mod divide;
 mod find_median_sorted_arrays;
 mod group_anagrams;
@@ -33,6 +34,7 @@ fn main() {
         group_anagrams::NAME => group_anagrams::test(),
         int_to_roman::NAME => int_to_roman::test(),
         number_to_words::NAME => number_to_words::test(),
+        convert_to_base7::NAME => convert_to_base7::test(),
         _ => print!("{}", query),
     }
 }
