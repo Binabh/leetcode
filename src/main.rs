@@ -1,4 +1,5 @@
 mod calculate_tax;
+mod contains_duplicate;
 mod convert_to_base7;
 mod divide;
 mod find_median_sorted_arrays;
@@ -7,12 +8,14 @@ mod int_to_roman;
 mod is_anagram;
 mod is_palindrome;
 mod is_valid;
+mod letter_combinations;
 mod longest_common_prefix;
 mod my_pow;
 mod my_sqrt;
 mod number_to_words;
 mod reverse;
 mod roman_to_int;
+mod top_k_frequent;
 mod two_sum;
 use std::env;
 fn main() {
@@ -35,6 +38,9 @@ fn main() {
         int_to_roman::NAME => int_to_roman::test(),
         number_to_words::NAME => number_to_words::test(),
         convert_to_base7::NAME => convert_to_base7::test(),
+        letter_combinations::NAME => letter_combinations::test(),
+        contains_duplicate::NAME => contains_duplicate::test(),
+        top_k_frequent::NAME => top_k_frequent::test(),
         _ => print!("{}", query),
     }
 }
