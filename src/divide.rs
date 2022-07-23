@@ -1,39 +1,27 @@
-pub fn divide(mut dividend: i32, divisor: i32) -> i32 {
-    let mut result = 0;
-    if dividend == i32::MIN && divisor == -1 {
-        return i32::MAX;
-    }
-    if divisor == 1 {
-        return dividend;
-    }
-    if divisor == -1 {
-        return -dividend;
+pub fn divide(mut dividend: i32, mut divisor: i32) -> i32 {
+    let mut result: i64 = 0;
+    let mut multiplier = 1;
+    if dividend > 0 && divisor < 0 {
+        divisor = divisor * -1;
+        multiplier = -1;
     }
     if dividend < 0 && divisor > 0 {
-        while dividend < 0 {
-            dividend += divisor;
-            result += 1;
-        }
-        -(result - 1)
-    } else if dividend > 0 && divisor < 0 {
-        while dividend > 0 {
-            dividend += divisor;
-            result += 1;
-        }
-        -(result - 1)
-    } else if dividend < 0 && divisor < 0 {
-        while dividend < 0 {
-            dividend -= divisor;
-            result += 1;
-        }
-        result - 1
-    } else {
-        while dividend >= divisor {
-            dividend -= divisor;
-            result += 1;
-        }
-        result
+        dividend = dividend * -1;
+        multiplier = -1;
     }
+    if dividend < 0 && divisor < 0 {
+        dividend = dividend * -1;
+        divisor = divisor * -1;
+    }
+
+    print!("{} {}\n", dividend, divisor);
+
+    while dividend >= divisor {
+        dividend -= divisor;
+        result += 1;
+    }
+
+    return (result * multiplier) as i32;
 }
 
 pub fn test() {

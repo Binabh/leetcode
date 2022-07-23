@@ -8,11 +8,14 @@ mod int_to_roman;
 mod is_anagram;
 mod is_palindrome;
 mod is_valid;
+mod is_valid_sudoku;
 mod letter_combinations;
 mod longest_common_prefix;
+mod longest_consecutive;
 mod my_pow;
 mod my_sqrt;
 mod number_to_words;
+mod product_except_self;
 mod reverse;
 mod roman_to_int;
 mod top_k_frequent;
@@ -41,6 +44,9 @@ fn main() {
         letter_combinations::NAME => letter_combinations::test(),
         contains_duplicate::NAME => contains_duplicate::test(),
         top_k_frequent::NAME => top_k_frequent::test(),
+        product_except_self::NAME => product_except_self::test(),
+        is_valid_sudoku::NAME => is_valid_sudoku::test(),
+        longest_consecutive::NAME => longest_consecutive::test(),
         _ => print!("{}", query),
     }
 }
