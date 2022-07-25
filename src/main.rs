@@ -18,6 +18,7 @@ mod number_to_words;
 mod product_except_self;
 mod reverse;
 mod roman_to_int;
+mod three_sum;
 mod top_k_frequent;
 mod two_sum;
 use std::env;
@@ -47,6 +48,7 @@ fn main() {
         product_except_self::NAME => product_except_self::test(),
         is_valid_sudoku::NAME => is_valid_sudoku::test(),
         longest_consecutive::NAME => longest_consecutive::test(),
+        three_sum::NAME => three_sum::test(),
         _ => print!("{}", query),
     }
 }
