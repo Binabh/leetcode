@@ -12,6 +12,7 @@ mod is_valid_sudoku;
 mod letter_combinations;
 mod longest_common_prefix;
 mod longest_consecutive;
+mod max_area;
 mod my_pow;
 mod my_sqrt;
 mod number_to_words;
@@ -49,6 +50,7 @@ fn main() {
         is_valid_sudoku::NAME => is_valid_sudoku::test(),
         longest_consecutive::NAME => longest_consecutive::test(),
         three_sum::NAME => three_sum::test(),
+        max_area::NAME => max_area::test(),
         _ => print!("{}", query),
     }
 }
