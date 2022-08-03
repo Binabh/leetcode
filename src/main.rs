@@ -9,10 +9,12 @@ mod is_anagram;
 mod is_palindrome;
 mod is_valid;
 mod is_valid_sudoku;
+mod length_of_longest_substring;
 mod letter_combinations;
 mod longest_common_prefix;
 mod longest_consecutive;
 mod max_area;
+mod max_profit;
 mod my_pow;
 mod my_sqrt;
 mod number_to_words;
@@ -21,6 +23,7 @@ mod reverse;
 mod roman_to_int;
 mod three_sum;
 mod top_k_frequent;
+mod trap;
 mod two_sum;
 use std::env;
 fn main() {
@@ -51,6 +54,9 @@ fn main() {
         longest_consecutive::NAME => longest_consecutive::test(),
         three_sum::NAME => three_sum::test(),
         max_area::NAME => max_area::test(),
+        trap::NAME => trap::test(),
+        max_profit::NAME => max_profit::test(),
+        length_of_longest_substring::NAME => length_of_longest_substring::test(),
         _ => print!("{}", query),
     }
 }
