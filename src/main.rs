@@ -1,4 +1,5 @@
 mod calculate_tax;
+mod character_replacement;
 mod contains_duplicate;
 mod convert_to_base7;
 mod divide;
@@ -57,6 +58,7 @@ fn main() {
         trap::NAME => trap::test(),
         max_profit::NAME => max_profit::test(),
         length_of_longest_substring::NAME => length_of_longest_substring::test(),
+        character_replacement::NAME => character_replacement::test(),
         _ => print!("{}", query),
     }
 }
