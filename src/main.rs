@@ -1,5 +1,6 @@
 mod calculate_tax;
 mod character_replacement;
+mod check_inclusion;
 mod contains_duplicate;
 mod convert_to_base7;
 mod divide;
@@ -59,6 +60,7 @@ fn main() {
         max_profit::NAME => max_profit::test(),
         length_of_longest_substring::NAME => length_of_longest_substring::test(),
         character_replacement::NAME => character_replacement::test(),
+        check_inclusion::NAME => check_inclusion::test(),
         _ => print!("{}", query),
     }
 }
