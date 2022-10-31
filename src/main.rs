@@ -5,6 +5,7 @@ mod contains_duplicate;
 mod convert_to_base7;
 mod divide;
 mod find_median_sorted_arrays;
+mod find_min;
 mod group_anagrams;
 mod int_to_roman;
 mod is_anagram;
@@ -17,12 +18,14 @@ mod longest_common_prefix;
 mod longest_consecutive;
 mod max_area;
 mod max_profit;
+mod min_window;
 mod my_pow;
 mod my_sqrt;
 mod number_to_words;
 mod product_except_self;
 mod reverse;
 mod roman_to_int;
+mod search;
 mod three_sum;
 mod top_k_frequent;
 mod trap;
@@ -61,6 +64,9 @@ fn main() {
         length_of_longest_substring::NAME => length_of_longest_substring::test(),
         character_replacement::NAME => character_replacement::test(),
         check_inclusion::NAME => check_inclusion::test(),
+        min_window::NAME => min_window::test(),
+        search::NAME => search::test(),
+        find_min::NAME => find_min::test(),
         _ => print!("{}", query),
     }
 }
