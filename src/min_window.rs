@@ -2,52 +2,53 @@ pub fn min_window(s: String, t: String) -> String {
     if t.len() > s.len() || t == "".to_string() {
         return "".to_string();
     }
+    let (s_bytes, t_bytes) = (s.as_bytes(), t.as_bytes());
     let mut res: [usize; 2] = [0; 2];
-    let mut res_size = usize::MAX;
+    let mut res_size = s.len() + 1;
     let mut has: usize = 0;
-    let mut need: usize = 0;
+    let need: usize = t.len();
     let mut left_pointer: usize = 0;
-    let mut right_pointer: usize = left_pointer;
     let mut t_count: [usize; 58] = [0; 58];
     let mut s_count: [usize; 58] = [0; 58];
-    for (_, ch) in t.chars().enumerate() {
-        t_count[ch as usize - 'A' as usize] += 1;
-        need += 1;
+    let base = 'A' as usize;
+    for b in t_bytes {
+        t_count[*b as usize - base] += 1;
     }
-    while right_pointer < s.len() {
-        if t.contains(s.chars().nth(right_pointer).unwrap()) {
-            s_count[s.chars().nth(right_pointer).unwrap() as usize - 'A' as usize] += 1;
-            has += 1;
-        }
-        // if t.contains(s.chars().nth(right_pointer).unwrap())
-        //     && (s_count[s.chars().nth(right_pointer).unwrap() as usize - 'A' as usize]
-        //         < t_count[s.chars().nth(right_pointer).unwrap() as usize - 'A' as usize])
-        // {
-        //     s_count[s.chars().nth(right_pointer).unwrap() as usize - 'A' as usize] += 1;
-        //     has += 1;
-        // }
-        print!("{},{}\n", has, need);
-        while has == need {
-            if ((right_pointer + 1) - left_pointer) < res_size {
-                res = [left_pointer, right_pointer + 1];
-                res_size = (right_pointer + 1) - left_pointer;
+    for (i, b) in s_bytes.into_iter().enumerate() {
+        if t_count[*b as usize - base] > 0 {
+            s_count[*b as usize - base] += 1;
+            if s_count[*b as usize - base] <= t_count[*b as usize - base] {
+                has += 1;
             }
-            if s_count[s.chars().nth(left_pointer).unwrap() as usize - 'A' as usize] > 0 {
-                s_count[s.chars().nth(left_pointer).unwrap() as usize - 'A' as usize] -= 1;
-                has -= 1;
+        }
+        while has == need {
+            if i - left_pointer < res_size {
+                res = [left_pointer, i];
+                res_size = i - left_pointer;
+            }
+            if t_count[s_bytes[left_pointer] as usize - base] > 0 {
+                s_count[s_bytes[left_pointer] as usize - base] -= 1;
+                if s_count[s_bytes[left_pointer] as usize - base]
+                    < t_count[s_bytes[left_pointer] as usize - base]
+                {
+                    has -= 1;
+                }
             }
             left_pointer += 1;
         }
-        right_pointer += 1;
     }
-    if res_size != usize::MAX {
-        return s[res[0]..res[1]].to_string();
+    if res_size != s.len() + 1 {
+        return s[res[0]..res[1] + 1].to_string();
     } else {
         return "".to_string();
     }
 }
 
 pub fn test() {
+    assert_eq!(
+        min_window("ADOBECODEBANC".to_string(), "ABC".to_string()),
+        "BANC".to_string()
+    );
     assert_eq!(
         min_window("a".to_string(), "a".to_string()),
         "a".to_string()
@@ -61,13 +62,10 @@ pub fn test() {
         "ABC".to_string()
     );
     assert_eq!(
-        min_window("ADOBECODEBANC".to_string(), "ABC".to_string()),
-        "BANC".to_string()
-    );
-    assert_eq!(
         min_window("bba".to_string(), "ab".to_string()),
         "ba".to_string()
     );
+    assert_eq!(min_window("a".to_string(), "b".to_string()), "".to_string());
 }
 
 pub const NAME: &str = "min_window";
