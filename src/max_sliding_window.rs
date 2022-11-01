@@ -1,10 +1,11 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
+#![allow(unused_imports)]
 use std::collections::VecDeque;
 
 pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
     let result: Vec<i32> = vec![];
-    let (mut l, mut r) = (0 as usize, 0 as usize);
+    let (l, r) = (0 as usize, 0 as usize);
 
     result
 }
