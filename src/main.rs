@@ -4,6 +4,7 @@ mod check_inclusion;
 mod contains_duplicate;
 mod convert_to_base7;
 mod divide;
+mod eval_rpn;
 mod find_median_sorted_arrays;
 mod find_min;
 mod group_anagrams;
@@ -18,6 +19,7 @@ mod longest_common_prefix;
 mod longest_consecutive;
 mod max_area;
 mod max_profit;
+mod max_sliding_window;
 mod min_window;
 mod my_pow;
 mod my_sqrt;
@@ -67,6 +69,8 @@ fn main() {
         min_window::NAME => min_window::test(),
         search::NAME => search::test(),
         find_min::NAME => find_min::test(),
+        max_sliding_window::NAME => max_sliding_window::test(),
+        eval_rpn::NAME => eval_rpn::test(),
         _ => print!("{}", query),
     }
 }
