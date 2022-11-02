@@ -20,6 +20,7 @@ mod longest_consecutive;
 mod max_area;
 mod max_profit;
 mod max_sliding_window;
+mod min_stack;
 mod min_window;
 mod my_pow;
 mod my_sqrt;
@@ -71,6 +72,7 @@ fn main() {
         find_min::NAME => find_min::test(),
         max_sliding_window::NAME => max_sliding_window::test(),
         eval_rpn::NAME => eval_rpn::test(),
+        min_stack::NAME => min_stack::test(),
         _ => print!("{}", query),
     }
 }
