@@ -1,11 +1,23 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(unused_imports)]
 use std::collections::VecDeque;
 
 pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
-    let result: Vec<i32> = vec![];
-    let (l, r) = (0 as usize, 0 as usize);
+    let mut result: Vec<i32> = vec![];
+    let mut q: VecDeque<usize> = VecDeque::new();
+    let (mut l, mut r) = (0 as usize, 0 as usize);
+    while r < nums.len() {
+        while !q.is_empty() && nums[r] > nums[*q.back().unwrap()] {
+            q.pop_back();
+        }
+        q.push_back(r);
+        if l > *q.front().unwrap() {
+            q.pop_front();
+        }
+        if r + 1 >= k as usize {
+            result.push(nums[*q.front().unwrap()]);
+            l += 1;
+        }
+        r += 1;
+    }
 
     result
 }

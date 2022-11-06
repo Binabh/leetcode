@@ -1,3 +1,4 @@
+mod apply_operations;
 mod calculate_tax;
 mod character_replacement;
 mod check_inclusion;
@@ -73,6 +74,7 @@ fn main() {
         max_sliding_window::NAME => max_sliding_window::test(),
         eval_rpn::NAME => eval_rpn::test(),
         min_stack::NAME => min_stack::test(),
+        apply_operations::NAME => apply_operations::test(),
         _ => print!("{}", query),
     }
 }
