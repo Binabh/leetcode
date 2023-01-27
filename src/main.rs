@@ -3,7 +3,9 @@ mod calculate_tax;
 mod character_replacement;
 mod check_inclusion;
 mod contains_duplicate;
+mod convert_temperature;
 mod convert_to_base7;
+mod distinct_averages;
 mod divide;
 mod eval_rpn;
 mod find_median_sorted_arrays;
@@ -19,6 +21,7 @@ mod letter_combinations;
 mod longest_common_prefix;
 mod longest_consecutive;
 mod max_area;
+mod max_palindromes;
 mod max_profit;
 mod max_sliding_window;
 mod min_stack;
@@ -30,11 +33,14 @@ mod product_except_self;
 mod reverse;
 mod roman_to_int;
 mod search;
+mod subarray_lcm;
 mod three_sum;
 mod top_k_frequent;
 mod trap;
 mod two_sum;
+mod unequal_triplets;
 use std::env;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     let query = args[1].as_str();
@@ -75,6 +81,11 @@ fn main() {
         eval_rpn::NAME => eval_rpn::test(),
         min_stack::NAME => min_stack::test(),
         apply_operations::NAME => apply_operations::test(),
+        distinct_averages::NAME => distinct_averages::test(),
+        convert_temperature::NAME => convert_temperature::test(),
+        subarray_lcm::NAME => subarray_lcm::test(),
+        max_palindromes::NAME => max_palindromes::test(),
+        unequal_triplets::NAME => unequal_triplets::test(),
         _ => print!("{}", query),
     }
 }
