@@ -10,6 +10,7 @@ mod divide;
 mod eval_rpn;
 mod find_median_sorted_arrays;
 mod find_min;
+mod generate_parenthesis;
 mod group_anagrams;
 mod int_to_roman;
 mod is_anagram;
@@ -86,6 +87,7 @@ fn main() {
         subarray_lcm::NAME => subarray_lcm::test(),
         max_palindromes::NAME => max_palindromes::test(),
         unequal_triplets::NAME => unequal_triplets::test(),
+        generate_parenthesis::NAME => generate_parenthesis::test(),
         _ => print!("{}", query),
     }
 }
