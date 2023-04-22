@@ -5,6 +5,7 @@ mod check_inclusion;
 mod contains_duplicate;
 mod convert_temperature;
 mod convert_to_base7;
+mod daily_temperatures;
 mod distinct_averages;
 mod divide;
 mod eval_rpn;
@@ -34,6 +35,7 @@ mod product_except_self;
 mod reverse;
 mod roman_to_int;
 mod search;
+mod search_martix;
 mod subarray_lcm;
 mod three_sum;
 mod top_k_frequent;
@@ -65,6 +67,8 @@ fn main() {
         letter_combinations::NAME => letter_combinations::test(),
         contains_duplicate::NAME => contains_duplicate::test(),
         top_k_frequent::NAME => top_k_frequent::test(),
+        daily_temperatures::NAME => daily_temperatures::test(),
+        search_martix::NAME => search_martix::test(),
         product_except_self::NAME => product_except_self::test(),
         is_valid_sudoku::NAME => is_valid_sudoku::test(),
         longest_consecutive::NAME => longest_consecutive::test(),

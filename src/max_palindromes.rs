@@ -1,9 +1,7 @@
 pub fn max_palindromes(s: String, k: i32) -> i32 {
     let mut result = 0;
     let s_bytes = s.as_bytes();
-    for b in s_bytes {
-        
-    }
+    for b in s_bytes {}
 
     result
 }
