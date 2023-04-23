@@ -19,6 +19,7 @@ mod is_anagram;
 mod is_palindrome;
 mod is_valid;
 mod is_valid_sudoku;
+mod largest_rectangle_area;
 mod length_of_longest_substring;
 mod letter_combinations;
 mod longest_common_prefix;
@@ -94,6 +95,7 @@ fn main() {
         unequal_triplets::NAME => unequal_triplets::test(),
         generate_parenthesis::NAME => generate_parenthesis::test(),
         car_fleet::NAME => car_fleet::test(),
+        largest_rectangle_area::NAME => largest_rectangle_area::test(),
         _ => print!("{}", query),
     }
 }
