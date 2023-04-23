@@ -1,5 +1,6 @@
 mod apply_operations;
 mod calculate_tax;
+mod car_fleet;
 mod character_replacement;
 mod check_inclusion;
 mod contains_duplicate;
@@ -92,6 +93,7 @@ fn main() {
         max_palindromes::NAME => max_palindromes::test(),
         unequal_triplets::NAME => unequal_triplets::test(),
         generate_parenthesis::NAME => generate_parenthesis::test(),
+        car_fleet::NAME => car_fleet::test(),
         _ => print!("{}", query),
     }
 }
