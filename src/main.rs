@@ -28,6 +28,7 @@ mod max_area;
 mod max_palindromes;
 mod max_profit;
 mod max_sliding_window;
+mod min_eating_speed;
 mod min_stack;
 mod min_window;
 mod my_pow;
@@ -71,7 +72,6 @@ fn main() {
         top_k_frequent::NAME => top_k_frequent::test(),
         daily_temperatures::NAME => daily_temperatures::test(),
         search_martix::NAME => search_martix::test(),
-        product_except_self::NAME => product_except_self::test(),
         is_valid_sudoku::NAME => is_valid_sudoku::test(),
         longest_consecutive::NAME => longest_consecutive::test(),
         three_sum::NAME => three_sum::test(),
@@ -96,6 +96,8 @@ fn main() {
         generate_parenthesis::NAME => generate_parenthesis::test(),
         car_fleet::NAME => car_fleet::test(),
         largest_rectangle_area::NAME => largest_rectangle_area::test(),
+        min_eating_speed::NAME => min_eating_speed::test(),
+        product_except_self::NAME => product_except_self::test(),
         _ => print!("{}", query),
     }
 }
