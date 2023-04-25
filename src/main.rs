@@ -41,6 +41,7 @@ mod search;
 mod search_martix;
 mod subarray_lcm;
 mod three_sum;
+mod time_map;
 mod top_k_frequent;
 mod trap;
 mod two_sum;
@@ -98,6 +99,7 @@ fn main() {
         largest_rectangle_area::NAME => largest_rectangle_area::test(),
         min_eating_speed::NAME => min_eating_speed::test(),
         product_except_self::NAME => product_except_self::test(),
+        time_map::NAME => time_map::test(),
         _ => print!("{}", query),
     }
 }
