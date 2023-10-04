@@ -36,6 +36,7 @@ mod my_sqrt;
 mod number_to_words;
 mod product_except_self;
 mod reverse;
+mod reverse_list;
 mod roman_to_int;
 mod search;
 mod search_martix;
@@ -100,6 +101,7 @@ fn main() {
         min_eating_speed::NAME => min_eating_speed::test(),
         product_except_self::NAME => product_except_self::test(),
         time_map::NAME => time_map::test(),
+        reverse_list::NAME => reverse_list::test(),
         _ => print!("{}", query),
     }
 }
