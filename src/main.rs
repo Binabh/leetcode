@@ -28,6 +28,7 @@ mod max_area;
 mod max_palindromes;
 mod max_profit;
 mod max_sliding_window;
+mod merge_two_lists;
 mod min_eating_speed;
 mod min_stack;
 mod min_window;
@@ -40,6 +41,7 @@ mod reverse_list;
 mod roman_to_int;
 mod search;
 mod search_martix;
+mod singly_linked_list;
 mod subarray_lcm;
 mod three_sum;
 mod time_map;
@@ -102,6 +104,7 @@ fn main() {
         product_except_self::NAME => product_except_self::test(),
         time_map::NAME => time_map::test(),
         reverse_list::NAME => reverse_list::test(),
+        merge_two_lists::NAME => merge_two_lists::test(),
         _ => print!("{}", query),
     }
 }
