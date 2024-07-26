@@ -68,4 +68,3 @@ pub fn test() {
     assert_eq!(min_window("a".to_string(), "b".to_string()), "".to_string());
 }
 
-pub const NAME: &str = "min_window";
