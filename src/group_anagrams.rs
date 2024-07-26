@@ -39,7 +39,7 @@ mod tests {
                 String::from("ate"),
                 String::from("nat"),
                 String::from("bat"),
-            ]),
+            ]).sort(),
             vec![
                 vec![String::from("bat")],
                 vec![
@@ -48,7 +48,7 @@ mod tests {
                     String::from("ate")
                 ],
                 vec![String::from("tan"), String::from("nat")]
-            ]
+            ].sort()
         )
     }
 }

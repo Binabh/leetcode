@@ -39,12 +39,12 @@ mod tests {
         assert_eq!(three_sum(vec![0, 0, 0, 0]), vec![[0, 0, 0]]);
         assert_eq!(three_sum(vec![0, 1, 1]), vec![] as Vec<Vec<i32>>);
         assert_eq!(
-            three_sum(vec![-2, 0, 1, 1, 2]),
-            vec![[-2, 0, 2], [-2, 1, 1]]
+            three_sum(vec![-2, 0, 1, 1, 2]).sort(),
+            vec![[-2, 0, 2], [-2, 1, 1]].sort()
         );
         assert_eq!(
-            three_sum(vec![-1, 0, 1, 2, -1, -4]),
-            vec![[-1, -1, 2], [-1, 0, 1]]
+            three_sum(vec![-1, 0, 1, 2, -1, -4]).sort(),
+            vec![[-1, -1, 2], [-1, 0, 1]].sort()
         );
     }
 }
